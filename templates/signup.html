@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<div class="form">
+      
+      <ul class="tab-group">
+        <li class="tab active"><a href="{{ url_for('signup') }}">Sign Up</a></li>
+        <li class="tab"><a href="{{ url_for('signin') }}">Log In</a></li>
+      </ul>
+      
+      <div class="tab-content">
+        <div id="signup">
+          <h1>Create A New Account</h1>
+          
+          <form action="{{url_for('signup')}}" method="post">
+          
+          <div class="container">
+           
+              <label>
+                First Name<span class="req">*</span>
+              </label>
+              <input type="text" required autocomplete="off" name="firstname"/>
+            </div>
+        
+            <div class="field-wrap">
+              <label>
+                Last Name<span class="req">*</span>
+              </label>
+              <input name="" type="text" required autocomplete="off" name="lastname" />
+            </div>
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              Email Address<span class="req">*</span>
+            </label>
+            <input name="email" type="email" required autocomplete="off"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Set A Password<span class="req">*</span>
+            </label>
+            <input name="password" type="password" required autocomplete="off"/>
+          </div>
+          <div class="field-wrap">
+            <label>
+              Confirm Password<span class="req">*</span>
+            </label>
+            <input name="confirm_password" type="password" required autocomplete="off"/>
+          </div>
+          <div class="field-wrap">
+            <label>
+              Birthday<span class="req">*</span>
+            </label>
+            <input name="date" type="date" required autocomplete="off"/>
+          </div>
+          <div class="field-wrap">
+            <label>
+              Gender<span class="req">*</span>
+            </label>
+            <input name="gender" value="male" type="radio" required autocomplete="off"/>male
+            <input name="gender" value="female" type="radio" required autocomplete="off"/>female
+            
+
+          </div>
+
+          
+          <input type="submit" class="button button-block" value="Get Started">
+          
+          </form>
+
+        </div>
+        
+       
+</div> <!-- /form -->
+
+</body>
+</html>
