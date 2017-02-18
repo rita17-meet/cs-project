@@ -5,7 +5,7 @@ app.secret_key="this is my project"
 ### Add your tables here!
 # For example:
 # from database_setup import Base, Potato, Monkey
-from database_setup import Base , Users , Teams , leagues , Players , games , news , gallery , leagues_teams 
+from database_setup import Base , Users , Teams , leagues , Players , Games , news , gallery , leagues_teams 
 
 from datetime import datetime
 
@@ -57,9 +57,9 @@ def leagues():
 	return render_template('leagues.html')
 
 @app.route('/games')
-def games():
-	games1 =dbsession.query(games).all()
-	return render_template('games.html', games =games1)
+def gamesPage():
+	games1 = dbsession.query(Games).all()
+	return render_template('games.html', gamess =games1)
 
 @app.route('/aboutme')
 def aboutme():

@@ -38,7 +38,7 @@ class Players(Base):
 	DOB=Column(String)
 	team_id=Column(Integer,ForeignKey('teams.id'))
 
-class games(Base):
+class Games(Base):
 	__tablename__="games"
 	id=Column(Integer,primary_key=True)
 	league_id=Column(Integer, ForeignKey('leagues.id'))
