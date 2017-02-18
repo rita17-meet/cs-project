@@ -20,6 +20,7 @@ dbsession = DBSession()
 
 
 #YOUR WEB APP CODE GOES HERE
+
 @app.route('/')
 def main():
 	return render_template('home.html')
@@ -31,8 +32,8 @@ def signin():
 		password=request.form['password']
 		user=dbsession.query(Users).filter_by(name=name,password=password).first()
 		if user is None:
-			return render_template('signup.html')
-		return redirect(url_for('main'))
+			return render_template('home.html')
+		return redirect(url_for('home'))
 	else:
 		return render_template('signIn.html')
 
@@ -57,12 +58,24 @@ def leagues():
 
 @app.route('/games')
 def games():
-	return render_template('games.html')
+	games1 =dbsession.query(games).all()
+	return render_template('games.html', games =games1)
 
 @app.route('/aboutme')
 def aboutme():
 	return render_template('aboutme.html')
 
+@app.route('/north')
+def north():
+	return render_template('north.html')
+
+@app.route('/south')
+def south():
+	return render_template('south.html')
+
+@app.route('/team1')
+def team1():
+	return render_template('team1.html')
 
 if __name__ == '__main__':
 	app.run(debug=True)
